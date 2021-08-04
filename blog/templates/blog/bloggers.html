@@ -3,7 +3,7 @@
     {% for user in all_users %}
         <div class="content_section">
             <ul class="list-group">
-                <li class="list-group-item list-group-item-light"><a href="#">{{ user.username }}</a></li>
+                <li class="list-group-item list-group-item-light"><a href="#">{{  user.id }}: {{ user.username }}</a></li>
             </ul>
         </div>
     {% endfor %}
