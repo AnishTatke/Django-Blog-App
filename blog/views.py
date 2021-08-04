@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.http import HttpResponse
 from . models import Post
@@ -18,11 +19,20 @@ posts = [
 ]
 
 def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'blog/home.html', context)
+    return render(request, 'blog/home.html')
 
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def blogs(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    return render(request, 'blog/blogs.html', context)
+
+def bloggers(request):
+    context = {
+        'all_users': User.objects.all()
+    }
+    return render(request, 'blog/bloggers.html', context)
